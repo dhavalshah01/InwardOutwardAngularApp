@@ -1,0 +1,298 @@
+<head>
+        <style>
+          body {
+            background: #3568AD;
+          }
+      
+          #wrapper {
+            font: 20px Calibri;
+            width: 100px;
+            margin: 0 auto;
+          }
+      
+        </style>
+      </head>
+      <div class="col-lg-12" style="background: #ffffff; padding: 10px;">
+          <div class="input-field col-lg-12">
+              <h4 style="padding-bottom: 20px;">Create Inward</h4> 
+              
+      <form #inwardForm="ngForm" (ngSubmit)="onSubmit(inwardForm)">
+        <input type="hidden" name="Id" #Id="ngModel" [(ngModel)]="inwardDataService.selectedInward.Id">
+        <div class="col-lg-12">
+             
+              <div class="row">
+                      <div class="col-lg-2 col-md-6 col-sm-6"> 
+                              <label>Inward Date </label>     
+                      </div>
+                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                              <div class="md-form">
+                                      <input type="text" id="datepicker" class="form-control datepicker"  name="InwardDate" #InwardDate="ngModel" [(ngModel)]="inwardDataService.selectedInward.InwardDate" style="height: 10px;" >
+                              </div>      
+                      </div>
+                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                              <label>Inward Number </label>     
+                      </div>
+                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                              <!-- <div class="md-form"> -->
+                                      <input type="text" class="input" name="InwardNumber" #InwardNumber="ngModel" [(ngModel)]="inwardDataService.selectedInward.InwardNumber" >
+                              <!-- </div> -->      
+                      </div>
+                      <!-- <div class="col"></div> -->
+                       
+              </div>
+              <div class="row">
+                          <div class="col-lg-2 col-md-6 col-sm-6"> 
+                                  <label>Purpose of Inward  </label>     
+                          </div>
+                          <div class="col-lg-3 col-md-6 col-sm-6"> 
+                                          <!-- <div class="md-form"> -->
+                                             <select class="browser-default" name="PurposeId" #PurposeId="ngModel" [(ngModel)]="inwardDataService.selectedInward.PurposeId">
+                                                      <option value="" disabled selected>Choose your option</option>
+                                                      <option *ngFor="let purposeofinw of purposeofinw" value= {{purposeofinw.PurposeId}}>
+                                                              {{purposeofinw.Purpose}}
+                                                            </option> 
+                                             </select >   <p>{{inwardDataService.selectedInward.PurposeId}}</p>
+                                          <!-- </div> -->     
+                          </div>
+                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                              <label>Reference Inward Date </label>     
+                      </div>
+                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                              <div class="md-form">
+                                      <input type="text" id="datepicker_Ref" class="form-control datepicker" name="RefInwardDate" #RefInwardDate="ngModel" [(ngModel)]="inwardDataService.selectedInward.RefInwardDate" style="height: 10px;" >
+                              </div>      
+                      </div>
+                      <!-- <div class="col"></div> -->
+          </div>
+          <div class="row">
+                      <div class="col-lg-2 col-md-6 col-sm-6"> 
+                              <label>Reference Number </label>     
+                      </div>
+                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                              <div class="md-form">
+                                      <input type="text" class="input"  name="ReferenceNumber" #ReferenceNumber="ngModel" [(ngModel)]="inwardDataService.selectedInward.ReferenceNumber" >
+                              </div>      
+                      </div>
+                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                              <label> Reference To Inward </label>     
+                      </div>
+                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                                      <select class="browser-default" name="RefeId" #RefeId="ngModel" [(ngModel)]="inwardDataService.selectedInward.RefeId">
+                                                      <option value="" disabled selected>Choose your option</option>
+                                                      <option *ngFor="let refinwards of refInwards" value= {{refinwards.RefId}}>
+                                                              {{refinwards.Reference}} {{refinwards.RefId}}
+                                                            </option>
+                                                            
+                                             </select >    <p>{{inwardDataService.selectedInward.RefeId}}</p>
+                      </div>
+                      <!-- <div class="col"></div> -->
+              </div>
+              
+              <div class="row">
+                      <div class="col-2"> 
+                              <label> Sender </label>     
+                      </div>
+                      <div class="col-5"> 
+                          <div class="form-inline" >
+                                  <div class="form-group" style="margin-left: 0px;">
+                                      <input name="prop" type="radio" [(ngModel)]="prop" id="radio11" value="Person" checked="checked">
+                                      <label for="radio11">Person</label>
+                                  </div>
+                              
+                                  <div class="form-group">
+                                      <input name="prop" type="radio" [(ngModel)]="prop" id="radio21" value="Society">
+                                      <label for="radio21">Society</label>
+                                  </div>
+                              
+                                  <div class="form-group">
+                                      <input name="prop" type="radio" [(ngModel)]="prop" id="radio31" value="Office" >
+                                      <label for="radio31">Office</label>
+                                  </div>
+                              </div>
+                      </div>
+                      
+              </div>
+              <div class="row"><br/></div>
+              <div class="row">
+                      <div class="col" *ngIf="prop === 'Person'"> 
+                              
+                              <div class="row">
+                                      <div class="col-lg-2 col-md-6 col-sm-6"><label>Name</label></div>
+                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                                              <div class="md-form">
+                                                      <input type="text" class="input" >
+                                              </div>      
+                                      </div>
+                                      
+                                      <div class="col-lg-3 col-md-6 col-sm-6"><label>Address</label></div>
+                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                                              <div class="md-form">
+                                                      <textarea type="text" name="Name" cols="5"  ></textarea>
+                                              </div>      
+                                      </div>
+                                      <!-- <div class="col"></div> -->
+                                     
+                              </div>
+                              <div class="row">
+                                      <div class="col-lg-2 col-md-6 col-sm-6"><label>Contact No.</label></div>
+                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                                              <div class="md-form">
+                                                      <input type="text" class="input">
+                                              </div>      
+                                      </div>
+                                  
+                                      <div class="col-lg-3 col-md-6 col-sm-6"><label>Email</label></div>
+                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                                              <div class="md-form">
+                                                      <input type="text" class="input" >
+                                              </div>      
+                                      </div>
+                                      <!-- <div class="col"></div> -->
+                              </div>
+                      </div>
+                      <div class="col" *ngIf="prop === 'Society'"> 
+                              <div class="row">
+                                      <div class="col-lg-2 col-md-6 col-sm-6"><label>Type</label></div>
+                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                                                  <select class="browser-default">
+                                                                  <option value="" disabled selected>Choose your option</option>
+                                                                  <option value="1">Option 1</option>
+                                                                  <option value="2">Option 2</option>
+                                                                  <option value="3">Option 3</option>
+                                                         </select >     
+                                      </div>
+                                      <div class="col"></div>
+                                      <div class="col"></div>
+                                      <div class="col"></div>
+                              </div>
+                              <div class="row"><br/></div>
+                              <div class="row">
+                                      <div class="col-lg-2 col-md-6 col-sm-6"><label>Name</label></div>
+                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                                              <div class="md-form">
+                                                      <input type="text" class="input" >
+                                              </div>      
+                                      </div>
+                                      
+                                      <div class="col-lg-3 col-md-6 col-sm-6"><label>Address</label></div>
+                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                                              <div class="md-form">
+                                                      <textarea type="text" name="Name" cols="5"  ></textarea>
+                                              </div>      
+                                      </div>
+                                      <!-- <div class="col"></div> -->
+                              </div>
+                              <div class="row">
+                                      <div class="col-lg-2 col-md-6 col-sm-6"><label>Contact No.</label></div>
+                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                                              <div class="md-form">
+                                                      <input type="text" class="input" >
+                                              </div>      
+                                      </div>
+                                  
+                                      <div class="col-lg-3 col-md-6 col-sm-6"><label>Email</label></div>
+                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                                              <div class="md-form">
+                                                      <input type="text" class="input">
+                                              </div>      
+                                      </div>
+                                      <!-- <div class="col"></div> -->
+                              </div>
+                      </div>
+                      <div class="col" *ngIf="prop === 'Office'"> 
+                              <div class="row">
+                                      <div class="col-lg-2 col-md-6 col-sm-6"><label>Type</label></div>
+                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                                                  <select class="browser-default">
+                                                                  <option value="" disabled selected>Choose your option</option>
+                                                                  <option value="1">Option 1</option>
+                                                                  <option value="2">Option 2</option>
+                                                                  <option value="3">Option 3</option>
+                                                         </select >     
+                                      </div>
+                                      <div class="col"></div>
+                                      <div class="col"></div>
+                                      <div class="col"></div>
+                              </div>
+                              <div class="row"><br/></div>
+                              <div class="row">
+                                      <div class="col-lg-2 col-md-6 col-sm-6"><label>Name</label></div>
+                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                                              <div class="md-form">
+                                                      <input type="text" class="input" >
+                                              </div>      
+                                      </div>
+                                      
+                                      <div class="col-lg-3 col-md-6 col-sm-6"><label>Address</label></div>
+                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                                              <div class="md-form">
+                                                      <textarea type="text" name="Name" cols="5"  ></textarea>
+                                              </div>      
+                                      </div>
+                                      <!-- <div class="col"></div> -->
+                              </div>
+                              <div class="row">
+                                      <div class="col-lg-2 col-md-6 col-sm-6"><label>Contact No.</label></div>
+                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                                              <div class="md-form">
+                                                      <input type="text" class="input" >
+                                              </div>      
+                                      </div>
+                                  
+                                      <div class="col-lg-3 col-md-6 col-sm-6"><label>Email</label></div>
+                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                                              <div class="md-form">
+                                                      <input type="text" class="input" >
+                                              </div>      
+                                      </div>
+                                      <!-- <div class="col"></div> -->
+                              </div>
+                      </div>
+              </div>
+              <div class="row"> 
+                      <div class="col-lg-2 col-md-6 col-sm-6"> 
+                              <label>Subject</label>     
+                      </div>
+                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                              <div class="md-form">
+                                      
+                                      <textarea type="text" cols="10"  name="Subject" #Subject="ngModel" [(ngModel)]="inwardDataService.selectedInward.Subject" ></textarea>
+                              </div>      
+                      </div>
+                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                              <label>Branch</label>     
+                      </div>
+                      <div class="col-lg-3 col-md-6 col-sm-6"> 
+                              
+                                      <select class="browser-default" name="BrId" #BrId="ngModel" [(ngModel)]="inwardDataService.selectedInward.BrId" placeholder="Select Branch">
+                                                      <option value="" disabled selected > Choose your option</option>
+                                                      <option *ngFor="let branch of branches" value= {{branch.BranchId}}>
+                                                              {{branch.BranchName}}
+                                                            </option>
+                                             </select > <p>{{inwardDataService.selectedInward.BrId}}</p>
+                                          <!--<div class="validation-error" *ngIf="InwardDate.invalid && InwardDate.touched">Date is Required</div>-->
+                              
+                      </div>
+                      <!-- <div class="col">  </div> -->
+                      
+              </div>
+              <div class="row" style="margin: 28px;text-align: right;">
+                                   
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <hr/>
+                    <button [disabled]="!inwardForm.valid" type="submit" class="btn btn-primary waves-light" mdbRippleRadius>
+                    <i class="fa fa-save"></i> Save changes</button>
+                
+                    <button type="button" class="btn btn-primary  waves-light" mdbRippleRadius (click)="resetForm(inwardform)">
+                    <i class="fa fa-repeat"></i> Reset</button>
+                
+                  <button type="button" class="btn btn-primary waves-light" aria-label="Close" (click)="createModal.hide()" mdbRippleRadius>Close</button>
+                </div>
+        </div>
+      
+      </div>
+      </form>
+      </div>
+      </div>   
+      
+      

@@ -1,0 +1,11 @@
+label
+{
+    float: right;
+    font-weight: 400;
+}
+input {
+
+    border: 1px solid #5f5b5b; 
+    height: 25px; 
+    font-size: 14px;
+}

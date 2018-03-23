@@ -1,0 +1,143 @@
+<div style="text-align:center;background-color: #243a51;padding: 20px;" *ngIf="!userClaims" ng-hide="userClaims"  >
+    <h1 class="text-white">Zero Pendency </h1>
+</div> 
+<div  *ngIf="!userClaims">
+     <router-outlet></router-outlet>
+</div>  
+
+
+<!--<div class="light-font">
+    <ol class="breadcrumb primary-color">
+        
+        <li class="breadcrumb-item"><a class="white-text" href="#">{{routelink}}</a></li>
+    </ol>
+</div>-->
+<!--Double navigation-->
+<header *ngIf="userClaims">
+    <mdb-sidenav #sidenav class="side-nav fixed" fixed="true">
+
+        <!--  <logo>
+             <div>
+                 <h5 style="margin: 10px; color: #ffffff;">Zero Pendency </h5>
+             </div>
+         </logo> -->
+     
+         <links>
+             <!-- Side navigation links -->
+             <!-- <li>  style="margin-left: -30px; width:103%;padding: 0px; float: left;"-->
+                 <ul class="collapsible collapsible-accordion" >
+                     <mdb-squeezebox [multiple]="false" aria-multiselectable="false">
+ 
+                        <!-- Simple link -->
+                        <mdb-item class="no-collase">
+                            <mdb-item-head> </mdb-item-head>
+                            <mdb-item-body></mdb-item-body>
+                        </mdb-item>
+                         <!-- Simple link -->
+                         <mdb-item class="no-collase">
+                             <mdb-item-head mdbRippleRadius><a class="waves-effect" mdbRippleRadius routerLink='/home'><i class="fa fa-dashboard"></i> Dashboard </a> </mdb-item-head>
+                             <mdb-item-body></mdb-item-body>
+                         </mdb-item>
+ 
+                             <!-- Simple link -->
+                         <mdb-item class="no-collase">
+                             <mdb-item-head mdbRippleRadius><a class="waves-effect" mdbRippleRadius routerLink='/inwards'><i class="fa fa-reply"></i> Inwards </a></mdb-item-head>
+                             <mdb-item-body></mdb-item-body>
+                         </mdb-item>
+                         <!-- Simple link -->
+                         <mdb-item class="no-collase">
+                             <mdb-item-head mdbRippleRadius><a  class="waves-effect" mdbRippleRadius ><i class="fa fa-share"></i> Outwards</a></mdb-item-head>
+                             <mdb-item-body></mdb-item-body>
+                         </mdb-item>
+                         <!-- Collapsible link -->
+                         <mdb-item>
+                             <mdb-item-head mdbRippleRadius><span style="color:#ffffff;"><i class="fa fa-chevron-right"></i> Masters</span></mdb-item-head>
+                             <mdb-item-body>
+                                 <ul>
+                                     <li><a href="#" class="waves-effect" routerLink='/CreateUser' mdbRippleRadius> Create User</a></li>
+                                 </ul>
+                             </mdb-item-body>
+                         </mdb-item>
+                         
+                     </mdb-squeezebox>
+                 </ul>
+             <!-- </li> -->
+             <!--/. Side navigation links -->
+             </links>
+             <div class="sidenav-bg mask-strong"></div>
+         </mdb-sidenav>
+         <!--/. Sidebar navigation -->
+        <!-- Navbar -->
+    <mdb-navbar SideClass="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav" [containerInside]="true">
+        <navlinks class="navbar-container">
+            <div class="float-left" >
+                <a (click)="sidenav.show()" class="button-collapse"><i class="fa fa-bars"></i></a>  
+            </div>
+        </navlinks>
+    <logo >
+        <!-- Breadcrumb-->
+        <div class="breadcrumbs breadcrumb-dn mr-auto">
+            <h4>Zero Pendency </h4>
+        </div>
+        <!--/. Breadcrumb-->
+    </logo>   
+
+    <navlinks>
+        <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav">
+           
+        <li class="nav-item">
+            <a class="nav-link waves-light"  routerLink='/editprofile' mdbRippleRadius><i class="fa fa-user"></i> <span class="clearfix d-none d-sm-inline-block">My Account</span></a>
+        </li>
+       
+        <li class="nav-item  avatar dropdown btn-group" dropdown>
+            <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>
+                <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="img-fluid rounded-circle z-depth-0">
+            </a>
+            <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
+                <a class="dropdown-item" href="#" (click)="Logout()" >Logout</a>
+                
+            </div>
+        </li>
+        </ul>
+    </navlinks>
+    </mdb-navbar>
+        <!--/. Navbar -->
+
+</header>
+<!--/.Double navigation-->
+
+<!--Main Layout-->
+<main *ngIf="userClaims">
+   
+           <!--  <a (click)="sidenav.show()" class="button-collapse"><i class="fa fa-bars"></i>cdfgsdfgsdfg</a> -->
+           <div class="row">
+            <div class="col-lg-10 offset-2" style="background: #ffffff;padding-top: 20px;" >
+                    <router-outlet></router-outlet>
+            </div>
+        </div>
+</main>
+<!--/Main layout-->
+ 
+<!--<footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+      © 2018 Copyright 
+      <a class="grey-text text-lighten-4 right" href="http://yashcreations.com/">Yash Creations Inc</a>
+      </div>
+    </div>
+  </footer> -->
+
+  <footer class="page-footer" id="sticky" style="background-color: #243a51;" >
+      <!--Footer Links-->
+      <!-- <div class="container">
+      </div> -->
+      <!--/.Footer Links-->
+      <!--Copyright-->
+      <div class="footer-copyright">
+          <div class="container-fluid">
+              © 2018 Copyright :  <a class="text-lighten-4 right" target="_blank" href="http://yashcreations.com/">Yash Creations Inc</a>
+          </div>
+      </div>
+      <!--/.Copyright-->
+  </footer>
+  <!--/.Footer-->

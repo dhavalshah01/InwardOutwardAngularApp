@@ -1,0 +1,50 @@
+main {
+    margin: 0px;
+    margin-top: -26px;
+    width: 98.5%;
+}
+
+mdb-item
+{
+    padding: 0px;
+}
+/* mdb-item-head
+{
+    background:#243a51;
+    
+} */
+a {
+    color: #fff;
+}
+/* mdb-item-body
+{
+    background:#243a51;    
+} */
+mdb-sidenav
+{
+    top: 40px;
+    z-index: 100;
+    background:#243a51; 
+}
+
+
+/* body {
+    margin:0; /*gets rid of white space around body*/
+   /*  margin-top:16px; */
+    /* height:150vh; */ /*you can let your content define it's height*/
+   /*  position:relative; /*REQUIRED Sets up positioning for your footer*/
+ /*  } */ 
+  
+ /*  #sticky {
+    width:100%; */
+    /* height:44px; */
+   /*  padding-top:20px; */
+   /*  background:black; */
+    /* color:white; */
+   /*  font-weight:bold;
+    font-size:24px;
+    text-align:center; */
+   /*  position:absolute; */ /*Here's what sticks it*/
+   /*  bottom:0;  */         /*to the bottom of the body/page*/
+   /*  left:0; */            /*and to the left of the body/page.*/
+  /* } */
