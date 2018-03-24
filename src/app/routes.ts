@@ -50,6 +50,7 @@ export const appRoutes: Routes = [
         component: HomeComponent,
         canActivate: [AuthGuard]
     },
+    //registration 
     {
         path: 'signup',
         component: UserComponent,
