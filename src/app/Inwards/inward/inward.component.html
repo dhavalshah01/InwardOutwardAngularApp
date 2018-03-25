@@ -114,8 +114,40 @@
               </div>
               <div class="row"><br/></div>
               <div class="row">
-                      <div class="col" *ngIf="prop === 'Person'"> 
+                      <div class="col" *ngIf="prop === 'Person' || prop === 'Society' || prop === 'Office'"> 
                               
+                        <div class="row" *ngIf="prop === 'Society'">
+                                <div class="col-lg-2 col-md-6 col-sm-6"><label>Type</label></div>
+                                <div class="col-lg-3 col-md-6 col-sm-6"> 
+                                         <div class="md-form">
+                                        <select class="browser-default">
+                                                        <option value="" disabled selected>Choose your option</option>
+                                                        <option value="1">Option 1</option>
+                                                        <option value="2">Option 2</option>
+                                                        <option value="3">Option 3</option>
+                                        </select > 
+                                        </div>    
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6"></div>
+                                <div class="col-lg-3 col-md-6 col-sm-6"></div>
+                                <div class="col-lg-3 col-md-6 col-sm-6"></div>
+                        </div>
+                        <div class="row" *ngIf="prop === 'Office'">
+                                        <div class="col-lg-2 col-md-6 col-sm-6"><label>Type</label></div>
+                                        <div class="col-lg-3 col-md-6 col-sm-6"> 
+                                                 <div class="md-form">
+                                                <select class="browser-default">
+                                                                <option value="" disabled selected>Choose your option</option>
+                                                                <option value="1">Option 1</option>
+                                                                <option value="2">Option 2</option>
+                                                                <option value="3">Option 3</option>
+                                                </select > 
+                                                </div>    
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-sm-6"></div>
+                                        <div class="col-lg-3 col-md-6 col-sm-6"></div>
+                                        <div class="col-lg-3 col-md-6 col-sm-6"></div>
+                        </div>
                               <div class="row">
                                       <div class="col-lg-2 col-md-6 col-sm-6"><label>Name</label></div>
                                       <div class="col-lg-3 col-md-6 col-sm-6"> 
@@ -138,104 +170,6 @@
                                       <div class="col-lg-3 col-md-6 col-sm-6"> 
                                               <div class="md-form">
                                                       <input type="text" class="input">
-                                              </div>      
-                                      </div>
-                                  
-                                      <div class="col-lg-3 col-md-6 col-sm-6"><label>Email</label></div>
-                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
-                                              <div class="md-form">
-                                                      <input type="text" class="input" >
-                                              </div>      
-                                      </div>
-                                      <!-- <div class="col"></div> -->
-                              </div>
-                      </div>
-                      <div class="col" *ngIf="prop === 'Society'"> 
-                              <div class="row">
-                                      <div class="col-lg-2 col-md-6 col-sm-6"><label>Type</label></div>
-                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
-                                                  <select class="browser-default">
-                                                                  <option value="" disabled selected>Choose your option</option>
-                                                                  <option value="1">Option 1</option>
-                                                                  <option value="2">Option 2</option>
-                                                                  <option value="3">Option 3</option>
-                                                         </select >     
-                                      </div>
-                                      <div class="col"></div>
-                                      <div class="col"></div>
-                                      <div class="col"></div>
-                              </div>
-                              <div class="row"><br/></div>
-                              <div class="row">
-                                      <div class="col-lg-2 col-md-6 col-sm-6"><label>Name</label></div>
-                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
-                                              <div class="md-form">
-                                                      <input type="text" class="input" >
-                                              </div>      
-                                      </div>
-                                      
-                                      <div class="col-lg-3 col-md-6 col-sm-6"><label>Address</label></div>
-                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
-                                              <div class="md-form">
-                                                      <textarea type="text" name="Name" cols="5"  ></textarea>
-                                              </div>      
-                                      </div>
-                                      <!-- <div class="col"></div> -->
-                              </div>
-                              <div class="row">
-                                      <div class="col-lg-2 col-md-6 col-sm-6"><label>Contact No.</label></div>
-                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
-                                              <div class="md-form">
-                                                      <input type="text" class="input" >
-                                              </div>      
-                                      </div>
-                                  
-                                      <div class="col-lg-3 col-md-6 col-sm-6"><label>Email</label></div>
-                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
-                                              <div class="md-form">
-                                                      <input type="text" class="input">
-                                              </div>      
-                                      </div>
-                                      <!-- <div class="col"></div> -->
-                              </div>
-                      </div>
-                      <div class="col" *ngIf="prop === 'Office'"> 
-                              <div class="row">
-                                      <div class="col-lg-2 col-md-6 col-sm-6"><label>Type</label></div>
-                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
-                                                  <select class="browser-default">
-                                                                  <option value="" disabled selected>Choose your option</option>
-                                                                  <option value="1">Option 1</option>
-                                                                  <option value="2">Option 2</option>
-                                                                  <option value="3">Option 3</option>
-                                                         </select >     
-                                      </div>
-                                      <div class="col"></div>
-                                      <div class="col"></div>
-                                      <div class="col"></div>
-                              </div>
-                              <div class="row"><br/></div>
-                              <div class="row">
-                                      <div class="col-lg-2 col-md-6 col-sm-6"><label>Name</label></div>
-                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
-                                              <div class="md-form">
-                                                      <input type="text" class="input" >
-                                              </div>      
-                                      </div>
-                                      
-                                      <div class="col-lg-3 col-md-6 col-sm-6"><label>Address</label></div>
-                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
-                                              <div class="md-form">
-                                                      <textarea type="text" name="Name" cols="5"  ></textarea>
-                                              </div>      
-                                      </div>
-                                      <!-- <div class="col"></div> -->
-                              </div>
-                              <div class="row">
-                                      <div class="col-lg-2 col-md-6 col-sm-6"><label>Contact No.</label></div>
-                                      <div class="col-lg-3 col-md-6 col-sm-6"> 
-                                              <div class="md-form">
-                                                      <input type="text" class="input" >
                                               </div>      
                                       </div>
                                   
