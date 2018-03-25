@@ -32,6 +32,9 @@ import { RefInwardsComponent } from './masters/ref-inwards/ref-inwards.component
 import {RefInwardsService} from './shared/services/ref-inwards.service';
 import {PurposeofinwService} from './shared/services/purposeofinw.service';
 import { EditProfileComponent } from './user/edit-profile/edit-profile.component';
+import { SocietyTypeComponent } from './masters/society-type/society-type.component';
+import { OfficeTypeComponent } from './masters/office-type/office-type.component';
+import { PurposeOfInwardComponent } from './masters/purpose-of-inward/purpose-of-inward.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +48,7 @@ import { EditProfileComponent } from './user/edit-profile/edit-profile.component
     BranchComponent,
     InwardStatusComponent,
     RefInwardsComponent,  
-    EditProfileComponent,
+    EditProfileComponent, SocietyTypeComponent, OfficeTypeComponent, PurposeOfInwardComponent,
   ],
   schemas: [NO_ERRORS_SCHEMA],
   imports: [

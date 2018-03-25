@@ -12,6 +12,11 @@ import { BranchComponent } from './masters/branch/branch.component';
 import { EditProfileComponent } from './user/edit-profile/edit-profile.component';
 import {InwardStatusComponent} from './masters/inward-status/inward-status.component';
 import {RefInwardsComponent} from './masters/ref-inwards/ref-inwards.component';
+import {OfficeTypeComponent} from './masters/office-type/office-type.component';
+import {SocietyTypeComponent} from './masters/society-type/society-type.component';
+import {PurposeOfInwardComponent} from './masters/purpose-of-inward/purpose-of-inward.component';
+
+
 
 export const appRoutes: Routes = [
     {
@@ -48,6 +53,45 @@ export const appRoutes: Routes = [
             {
                 path: '',
                 component: RefInwardsComponent,
+                canActivate: [AuthGuard]
+            }
+        ]
+        
+    },
+    {
+
+        path: 'OfficeType',
+        component: OfficeTypeComponent,
+        children: [
+            {
+                path: '',
+                component: OfficeTypeComponent,
+                canActivate: [AuthGuard]
+            }
+        ]
+        
+    },
+    {
+
+        path: 'SocietyType',
+        component: SocietyTypeComponent,
+        children: [
+            {
+                path: '',
+                component: SocietyTypeComponent,
+                canActivate: [AuthGuard]
+            }
+        ]
+        
+    },
+    {
+
+        path: 'PurposeOfInward',
+        component: PurposeOfInwardComponent,
+        children: [
+            {
+                path: '',
+                component: PurposeOfInwardComponent,
                 canActivate: [AuthGuard]
             }
         ]

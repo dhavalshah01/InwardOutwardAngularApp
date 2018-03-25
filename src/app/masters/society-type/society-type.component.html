@@ -1,0 +1,69 @@
+
+
+<div class="col-lg-12" style="background: #ffffff; padding: 10px;">
+  <div class="input-field col-lg-12">
+      <h4 style="padding-bottom: 20px;">Create Society Type</h4> 
+      
+<form #BranchForm="ngForm" (ngSubmit)="onSubmit(BranchForm)">
+<input type="hidden" name="Id" #Id="ngModel" [(ngModel)]="branchService.selectedBranch.Id">
+<div class="col-lg-12">
+     
+      <div class="row">
+              <div class="col-lg-2 col-md-6 col-sm-6"> 
+                      <label>Society Type Name </label>     
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6"> 
+                      <div class="md-form">
+                              <input type="text"  class="input" name="BranchName" #BranchName="ngModel" [(ngModel)]="branchService.selectedBranch.BranchName" >
+                      </div>
+                         
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6"> 
+                      <label>Society Type Description </label>     
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6"> 
+                      <div class="md-form">   
+                                <textarea type="text" cols="10"  name="BranchDesciption" #BranchDesciption="ngModel" [(ngModel)]="branchService.selectedBranch.BranchDesciption" ></textarea>
+                        </div>      
+              </div>   
+      </div>
+      <div class="row" style="margin:0px;text-align: right;">
+                                   
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <hr/>
+                    <button [disabled]="!BranchForm.valid" type="submit" class="btn btn-primary waves-light" mdbRippleRadius>
+                    <i class="fa fa-save"></i> Save changes</button>
+                
+                    <button type="button" class="btn btn-primary  waves-light" mdbRippleRadius (click)="resetForm(BranchForm)">
+                    <i class="fa fa-repeat"></i> Reset</button>
+                
+                 </div>
+              </div>
+</div>
+</form>
+</div>
+</div> 
+
+
+<table class="table" >
+                <tr class="z-depth-3">
+                       <th>Society Type#</th>
+                       <th>Society Type Name</th>
+                       <th>Society Type Desciption</th>
+                       <th>Edit</th>
+                       <th>Delete</th>
+                </tr>           
+                <tr *ngFor="let branch of branches">
+                        <td>{{branch.Id}}</td>
+                        <td>{{branch.BranchName}}</td>
+                        <td>{{branch.BranchDesciption}}</td>
+                        
+                        <td>
+                               <a class="btn-floating blue btn-small  waves-light" mdbRippleRadius (click)="showForEdit(branch)"><i class="fa fa-pencil"></i></a>
+                        </td>
+                        <td>    
+                                <a class="btn-floating blue  btn-small  waves-light" mdbRippleRadius (click)="onDelete(branch.Id)"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                </tr>
+              </table>
+

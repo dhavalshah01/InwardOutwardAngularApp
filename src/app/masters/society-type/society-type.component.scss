@@ -1,0 +1,40 @@
+table th {
+    font-size: 0.9rem;
+    font-weight: 500;
+    background-color: #64b5f6  !important;  /*  fd715221*/
+    padding: 0.5rem;
+}
+table td {
+    
+    text-align: center;
+    background-color: #fff  !important;  /*  fd715221*/
+   
+}
+label
+{
+    float: right;
+    font-weight: 400;
+}
+
+textarea
+{
+    -webkit-box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0 0 0px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid #5f5b5b; 
+    width: 100%;
+    height: 30px;
+}
+
+.col-example {
+    padding: 0.5rem;
+    background-color: #33b5e5;
+    border: 2px solid #ede7f6;
+    color: #fff;
+    text-align: center;
+}
+input {
+
+    border: 1px solid #5f5b5b; 
+    height: 25px; 
+    font-size: 14px;
+}
