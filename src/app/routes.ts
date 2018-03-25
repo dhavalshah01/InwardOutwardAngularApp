@@ -8,8 +8,10 @@ import { SignInComponent } from './user/sign-in/sign-in.component';
 import { AuthGuard } from './auth/auth.guard';
 import { InwardComponent } from './Inwards/inward/inward.component';
 import { InwardlistComponent } from './Inwards/inwardlist/inwardlist.component';
-import { BranchComponent } from './masters/branch/branch.component'
-import { EditProfileComponent } from './user/edit-profile/edit-profile.component'
+import { BranchComponent } from './masters/branch/branch.component';
+import { EditProfileComponent } from './user/edit-profile/edit-profile.component';
+import {InwardStatusComponent} from './masters/inward-status/inward-status.component';
+import {RefInwardsComponent} from './masters/ref-inwards/ref-inwards.component';
 
 export const appRoutes: Routes = [
     {
@@ -24,6 +26,32 @@ export const appRoutes: Routes = [
             }
         ]
 
+    },
+    {
+
+        path: 'InwardStatus',
+        component: InwardStatusComponent,
+        children: [
+            {
+                path: '',
+                component: InwardStatusComponent,
+                canActivate: [AuthGuard]
+            }
+        ]
+        
+    },
+    {
+
+        path: 'RefInwards',
+        component: RefInwardsComponent,
+        children: [
+            {
+                path: '',
+                component: RefInwardsComponent,
+                canActivate: [AuthGuard]
+            }
+        ]
+        
     },
 
     {
