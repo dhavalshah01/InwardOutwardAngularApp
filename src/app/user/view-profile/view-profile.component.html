@@ -1,0 +1,63 @@
+<div class="col-lg-12" style="background: #ffffff;padding-top: 10px;">
+    <div class="input-field col-lg-12">
+        <h4 style="padding-bottom: 80px; ">View Profile</h4> 
+        
+  <form #userRegistrationForm="ngForm" *ngIf="userClaims" >
+      <div class="row">
+          <div class="col-lg-2 col-md-6 col-sm-6"> 
+                  <label>First Name </label>     
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6"> 
+                  <div class="md-form">
+                         {{userClaims.FirstName}}
+                  </div>      
+          </div>
+          
+          <div class="col-lg-3 col-md-6 col-sm-6"> 
+              <label>Last Name</label>     
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6"> 
+                  <div class="md-form">
+                          {{userClaims.LastName}}
+                   </div>      
+          </div>
+          <!-- <div class="col"></div> -->
+           
+      </div>
+      <div class="row">
+          <div class="col-lg-2 col-md-6 col-sm-6"> 
+                  <label>User Name</label>     
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="md-form">
+                 {{userClaims.UserName}}  
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6"> 
+              <label>Phone Number</label>     
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+             {{userClaims.Phone}}
+            
+          </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-6 col-sm-6"> 
+            <label>Email</label>     
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          {{userClaims.Email}} 
+          
+        </div>
+        
+    </div>
+    <div class="row" style="margin-top:30px;text-align: center;padding-bottom: 170px;">                            
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <hr/>
+            <!-- <button [disabled]="!userRegistrationForm.valid" class="btn btn-primary waves-light" type="submit">Submit</button> -->
+          </div>
+    </div>
+    
+  </form>
+  </div>
+  </div>

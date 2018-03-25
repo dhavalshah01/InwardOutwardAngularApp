@@ -35,6 +35,8 @@ import { EditProfileComponent } from './user/edit-profile/edit-profile.component
 import { SocietyTypeComponent } from './masters/society-type/society-type.component';
 import { OfficeTypeComponent } from './masters/office-type/office-type.component';
 import { PurposeOfInwardComponent } from './masters/purpose-of-inward/purpose-of-inward.component';
+import { ViewProfileComponent } from './user/view-profile/view-profile.component';
+import { ChangePasswordComponent } from './user/change-password/change-password.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +50,7 @@ import { PurposeOfInwardComponent } from './masters/purpose-of-inward/purpose-of
     BranchComponent,
     InwardStatusComponent,
     RefInwardsComponent,  
-    EditProfileComponent, SocietyTypeComponent, OfficeTypeComponent, PurposeOfInwardComponent,
+    EditProfileComponent, SocietyTypeComponent, OfficeTypeComponent, PurposeOfInwardComponent, ViewProfileComponent, ChangePasswordComponent,
   ],
   schemas: [NO_ERRORS_SCHEMA],
   imports: [

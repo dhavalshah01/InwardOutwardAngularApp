@@ -92,7 +92,7 @@
         <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav">
            
         <li class="nav-item">
-            <a class="nav-link waves-light"  routerLink='/editprofile' mdbRippleRadius><i class="fa fa-user"></i> <span class="clearfix d-none d-sm-inline-block">My Account</span></a>
+            <a class="nav-link waves-light"   mdbRippleRadius><i class="fa fa-user"></i> <span class="clearfix d-none d-sm-inline-block">My Account</span></a>
         </li>
        
         <li class="nav-item  avatar dropdown btn-group" dropdown>
@@ -100,7 +100,10 @@
                 <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="img-fluid rounded-circle z-depth-0">
             </a>
             <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
-                <a class="dropdown-item" href="#" (click)="Logout()" >Logout</a>
+                    <a class="dropdown-item" href="#" routerLink='/ViewProfile' >View Profile</a>
+                    <a class="dropdown-item" href="#" routerLink='/editprofile' >Edit Profile</a>
+                    <a class="dropdown-item" href="#" routerLink='/ChangePassword' >Change Password</a>
+                    <a class="dropdown-item" href="#" (click)="Logout()" >Logout</a>
                 
             </div>
         </li>

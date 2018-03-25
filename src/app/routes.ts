@@ -15,6 +15,8 @@ import {RefInwardsComponent} from './masters/ref-inwards/ref-inwards.component';
 import {OfficeTypeComponent} from './masters/office-type/office-type.component';
 import {SocietyTypeComponent} from './masters/society-type/society-type.component';
 import {PurposeOfInwardComponent} from './masters/purpose-of-inward/purpose-of-inward.component';
+import {ViewProfileComponent} from './user/view-profile/view-profile.component';
+import {ChangePasswordComponent} from './user/change-password/change-password.component';
 
 
 
@@ -97,7 +99,32 @@ export const appRoutes: Routes = [
         ]
         
     },
+    {
 
+        path: 'ViewProfile',
+        component: ViewProfileComponent,
+        children: [
+            {
+                path: '',
+                component: ViewProfileComponent,
+                canActivate: [AuthGuard]
+            }
+        ]
+        
+    },
+    {
+
+        path: 'ChangePassword',
+        component: ChangePasswordComponent,
+        children: [
+            {
+                path: '',
+                component: ChangePasswordComponent,
+                canActivate: [AuthGuard]
+            }
+        ]
+        
+    },
     {
 
         path: 'inwards',
